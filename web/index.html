@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QuoteCraft APK Builder</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body><main>
+<header><span class="logo">QC</span><div><h1>APK Builder</h1><p>Turn your HTML app into an Android app.</p></div></header>
+<section id="pair"><h2>Connect to your Windows builder</h2><p>Enter the pairing code displayed on your computer.</p><label for="token">Pairing code</label><input id="token" type="password" autocomplete="off"><button id="connect">Connect</button></section>
+<section id="builder" hidden>
+<div class="notice">Your Windows computer builds the APK. Keep it running while using your phone.</div>
+<p id="tools" role="status"></p><button id="check" class="secondary">Check build tools again</button>
+<form id="form">
+<label for="name">App name</label><input id="name" maxlength="60" placeholder="My new app" required>
+<label for="package">Permanent app ID</label><input id="package" value="com.quotecraft.myapp" required autocapitalize="none" spellcheck="false"><small>Keep the same ID when updating an existing app.</small>
+<label for="version">Version number</label><input id="version" type="number" min="1" max="2100000000" step="1" value="1" required><small>Increase this number for each update.</small>
+<label for="file">HTML file or ZIP</label><input id="file" type="file" accept=".html,.htm,.zip" required><small>Maximum 40 MB. ZIP: put index.html at the top level with its supporting files.</small>
+<fieldset><legend>Optional permissions</legend><label class="toggle"><input id="microphone" type="checkbox"> Microphone</label><label class="toggle"><input id="camera" type="checkbox"> Camera</label></fieldset>
+<button id="build" type="submit">Build APK</button>
+</form></section>
+<section id="progress" hidden><h2 id="status">Preparing</h2><pre id="log" aria-live="polite"></pre><button id="download" hidden>Download APK</button></section>
+<p id="error" role="alert"></p>
+<footer>QuoteCraft · Local builds · No advertising added<br>Speech recognition, printing and file exports need testing in each app.</footer>
+</main></body></html>
